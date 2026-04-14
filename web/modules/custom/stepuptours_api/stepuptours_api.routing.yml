@@ -1,0 +1,266 @@
+stepuptours_api.site_settings:
+  path: '/api/site-settings'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\SiteSettingsController::get'
+  methods: [GET, OPTIONS]
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
+
+stepuptours_api.ranking:
+  path: '/api/ranking'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\RankingController::ranking'
+  methods: [GET, OPTIONS]
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
+
+stepuptours_api.user_register:
+  path: '/api/user/register'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\UserRegisterController::register'
+  methods: [POST, OPTIONS]
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
+
+stepuptours_api.me:
+  path: '/api/me'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\MeController::get'
+    _format: 'json'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    _auth:
+      - basic_auth
+      - cookie
+
+stepuptours_api.site_settings_update:
+  path: '/api/site-settings'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\SiteSettingsController::update'
+  methods: [PUT]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: TRUE
+    _auth:
+      - basic_auth
+      - cookie
+
+stepuptours_api.admin_languages:
+  path: '/api/admin/languages'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\TranslationsController::languages'
+  methods: [GET, OPTIONS]
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
+
+stepuptours_api.admin_translations_get:
+  path: '/api/admin/translations/{langcode}'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\TranslationsController::getTranslations'
+  methods: [GET, OPTIONS]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+    langcode: '[a-z]{2,5}'
+  options:
+    no_cache: TRUE
+    _auth:
+      - basic_auth
+      - cookie
+
+stepuptours_api.admin_translations_save:
+  path: '/api/admin/translations/{langcode}'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\TranslationsController::saveTranslations'
+  methods: [PUT]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+    langcode: '[a-z]{2,5}'
+  options:
+    no_cache: TRUE
+    _auth:
+      - basic_auth
+      - cookie
+
+stepuptours_api.payment_config:
+  path: '/api/payment/config'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\PaymentController::getConfig'
+  methods: [GET, OPTIONS]
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
+
+stepuptours_api.payment_donation_intent:
+  path: '/api/payment/donation-intent'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\PaymentController::donationIntent'
+  methods: [POST, OPTIONS]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: TRUE
+    _auth:
+      - basic_auth
+      - cookie
+
+stepuptours_api.payment_donation_activate:
+  path: '/api/payment/donation-activate'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\PaymentController::donationActivate'
+  methods: [POST, OPTIONS]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: TRUE
+    _auth:
+      - basic_auth
+      - cookie
+
+stepuptours_api.payment_webhook:
+  path: '/api/payment/webhook'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\WebhookController::handle'
+  methods: [POST, OPTIONS]
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
+
+stepuptours_api.admin_donations:
+  path: '/api/admin/donations'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\AdminDonationsController::list'
+  methods: [GET, OPTIONS]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: TRUE
+    _auth:
+      - basic_auth
+      - cookie
+
+stepuptours_api.subscription_create:
+  path: '/api/subscription/create'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\SubscriptionController::createSubscription'
+  methods: [POST, OPTIONS]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: TRUE
+    _auth:
+      - basic_auth
+      - cookie
+
+stepuptours_api.subscription_enable_renewal:
+  path: '/api/subscription/enable-renewal'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\SubscriptionController::enableRenewal'
+  methods: [POST, OPTIONS]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: TRUE
+    _auth:
+      - basic_auth
+      - cookie
+
+stepuptours_api.subscription_disable_renewal:
+  path: '/api/subscription/disable-renewal'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\SubscriptionController::disableRenewal'
+  methods: [POST, OPTIONS]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: TRUE
+    _auth:
+      - basic_auth
+      - cookie
+
+stepuptours_api.subscription_cancel:
+  path: '/api/subscription/cancel'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\SubscriptionController::cancel'
+  methods: [POST, OPTIONS]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: TRUE
+    _auth:
+      - basic_auth
+      - cookie
+
+stepuptours_api.admin_donations_summary:
+  path: '/api/admin/donations/summary'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\AdminDonationsController::summary'
+  methods: [GET, OPTIONS]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: TRUE
+    _auth:
+      - basic_auth
+      - cookie
+
+stepuptours_api.tts:
+  path: '/api/tts'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\TtsController::synthesize'
+  methods: [POST, OPTIONS]
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
+
+stepuptours_api.subscription_session_status:
+  path: '/api/subscription/session-status'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\SubscriptionController::sessionStatus'
+    _format: 'json'
+  methods: [POST, OPTIONS]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    no_cache: TRUE
+    _auth:
+      - basic_auth
+      - cookie
+
+stepuptours_api.google_auth:
+  path: '/api/auth/google'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\GoogleAuthController::authenticate'
+    _title: 'Google Auth'
+  methods: [POST]
+  requirements:
+    _access: 'TRUE'
+
+stepuptours_api.google_auth_options:
+  path: '/api/auth/google'
+  defaults:
+    _controller: '\Drupal\stepuptours_api\Controller\GoogleAuthController::options'
+    _title: 'Google Auth Options'
+  methods: [OPTIONS]
+  requirements:
+    _access: 'TRUE'
+
+stepuptours_api.payment_settings:
+  path: '/admin/config/stepuptours/payment'
+  defaults:
+    _form: '\Drupal\stepuptours_api\Form\PaymentSettingsForm'
+    _title: 'Payment & Stripe Settings'
+  requirements:
+    _permission: 'administer site configuration'

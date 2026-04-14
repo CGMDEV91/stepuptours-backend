@@ -1,0 +1,30 @@
+uuid: bb4a4d8e-be29-427a-8bab-68576ce3ca44
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.business
+    - node.type.professional_profile
+    - node.type.tour
+    - node.type.tour_step
+    - node.type.tour_user_activity
+  module:
+    - node
+id: professional
+label: Professional
+weight: 4
+is_admin: false
+permissions:
+  - 'create business content'
+  - 'create professional_profile content'
+  - 'create tour content'
+  - 'create tour_step content'
+  - 'create tour_user_activity content'
+  - 'delete own business content'
+  - 'delete own tour content'
+  - 'delete own tour_step content'
+  - 'edit own business content'
+  - 'edit own professional_profile content'
+  - 'edit own tour content'
+  - 'edit own tour_step content'
+  - 'view own unpublished content'

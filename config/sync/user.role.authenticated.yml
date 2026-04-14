@@ -1,0 +1,40 @@
+uuid: 5cc2fe83-0a33-440a-9ea9-f6ef9b92a1cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - node.type.tour
+    - node.type.tour_user_activity
+  module:
+    - comment
+    - file
+    - filter
+    - language
+    - node
+    - search
+    - shortcut
+    - system
+_core:
+  default_config_hash: hcfESiA8tr3D1muRk2KF7tbcun16ZJlG1R5SzKGed6g
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access user profiles'
+  - 'administer languages'
+  - 'cancel account'
+  - 'change own username'
+  - 'create tour_user_activity content'
+  - 'delete own files'
+  - 'edit any tour content'
+  - 'edit own tour_user_activity content'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'view user email addresses'

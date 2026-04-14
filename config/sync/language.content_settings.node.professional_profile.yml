@@ -1,0 +1,18 @@
+uuid: 5c9a860c-ef58-4b06-b67d-45a9142aa499
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.professional_profile
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.professional_profile
+target_entity_type_id: node
+target_bundle: professional_profile
+default_langcode: site_default
+language_alterable: false
